@@ -55,6 +55,10 @@ fetch(USER_DETAILS_URL)
 
     const COMPANY_TEMPLATE = `<p>${company.name}</p><p>${company.bs}</p><p class="italic">"${company.catchPhrase}"</p>`;
 
+    // Update the link URL to the homepage because it is different than '/' on github pages
+    let linkToHomepage = document.location.pathname.slice(0, -('userdetails.html').length);
+    document.querySelector('#linkToHomepage').href = linkToHomepage;
+    
     // Load HTML elements into the page's HTML code
     document.querySelectorAll('.header__username').forEach(elmt => {
       elmt.innerHTML = name;
