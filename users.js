@@ -1,5 +1,5 @@
 "use strict";
-const USERS_URL = "https://jsonplaceholder.typicode.com/users";
+const USERS_URL = "https://jsonplaceholder.typicode.com/userskk";
 
 let totalUsers = 0;
 let userIDsToHide = [];
@@ -39,6 +39,10 @@ fetch(USERS_URL)
       // Update the users to show in the list
       loadUsersData(sortedUsers);
     });
+  })
+  .catch(error => {
+    console.error(error);
+    loadUsersData([]);
   });
 
 function loadUsersData(users) {
@@ -48,7 +52,7 @@ function loadUsersData(users) {
   // Clear all existing items in the list
   const USERS_LIST = document.querySelector("#usersList");
   USERS_LIST.innerHTML = ''; // Reset <ul> innerHTML
-
+  
   if(users.length > 0 && userIDsToHide.length < totalUsers) {
     users.forEach((user) => {
       const { id, name, username, email } = user;
