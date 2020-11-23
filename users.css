@@ -15,6 +15,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   color: #333;
+  word-break: break-word;
 }
 
 h1 {
