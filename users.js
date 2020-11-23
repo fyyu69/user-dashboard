@@ -77,6 +77,7 @@ function loadUsersData(users) {
 
 function filterUsers(users, searchKey) {
   userIDsToHide = [];
+  searchKey = searchKey.trim().toLowerCase();
 
   return users.filter((user) => {
     let { id, name, username, email } = user;
@@ -95,6 +96,8 @@ function filterUsers(users, searchKey) {
 }
 
 function sortUsers(users, sortKey) {
+  sortKey = sortKey.trim().toLowerCase();
+
   return users.sort((userA, userB) => {
     let valueA = userA[sortKey].toLowerCase();
     let valueB = userB[sortKey].toLowerCase();
