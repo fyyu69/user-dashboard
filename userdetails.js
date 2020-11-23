@@ -5,8 +5,8 @@ const urlQuery = document.location.search;
 const matchedStr = urlQuery.match(ID_PATTERN)[0];
 const userId = matchedStr.slice('userId='.length);
 
-const USER_DETAILS_URL = `http://jsonplaceholder.typicode.com/users/${userId}`;
-const POSTS_URL = `http://jsonplaceholder.typicode.com/posts?userId=${userId}`;
+const USER_DETAILS_URL = `https://jsonplaceholder.typicode.com/users/${userId}`;
+const POSTS_URL = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
 
 // Fetch users data from API
 fetch(USER_DETAILS_URL)
@@ -49,7 +49,7 @@ fetch(USER_DETAILS_URL)
     }
 
     // Create HTML elements template to hold retrived values
-    const CONTACT_INFO_TEMPLATE = `<p>Username: ${username}</p><p>Email: <a href="mailto:${email}" class="link">${email}</a></p><p>Phone: <a href="tel:${formatedPhone}">${phone}</a></p><p>Website: <a href="http://${website}" target="_blank">${website}</a></p>`;
+    const CONTACT_INFO_TEMPLATE = `<p>Username: ${username}</p><p>Email: <a href="mailto:${email}" class="link">${email}</a></p><p>Phone: <a href="tel:${formatedPhone}">${phone}</a></p><p>Website: <a href="https://${website}" target="_blank">${website}</a></p>`;
 
     const ADDRESS_TEMPLATE = `<span class="nowrap">${address.suite}</span> <span class="nowrap">${address.street},</span> <span class="nowrap">${address.city},</span> <span class="nowrap">${address.zipcode}</span>`;
 

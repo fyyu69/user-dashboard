@@ -1,5 +1,5 @@
 "use strict";
-const USERS_URL = "http://jsonplaceholder.typicode.com/users";
+const USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
 let totalUsers = 0;
 let userIDsToHide = [];
